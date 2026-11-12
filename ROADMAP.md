@@ -11,7 +11,8 @@ Audit of Lorien's architecture, features, risks and licenses.
 ## Step 0.5 — Setup & baseline 🔄
 - ✅ Fork `mbrlabs/Lorien` → `zakaria-boullam/Lorien`, `upstream` remote configured
 - ✅ CHANGELOG, ROADMAP, THIRD_PARTY_LICENSES
-- ⏳ Baseline verified on Windows with Godot 4.3 (draw, save, reopen; mouse and XP-Pen)
+- ✅ Imports and launches on Windows with Godot 4.3 (automated check)
+- ⏳ Manual baseline on Windows: draw, save, reopen; mouse and XP-Pen
 
 ## Phase 1 — UI and background ⏳
 - Charcoal canvas `#17191D`, subtle dotted grid
@@ -58,3 +59,5 @@ Audit of Lorien's architecture, features, risks and licenses.
 - Undo of delete does not preserve stroke order (Phase 2)
 - Save format unvalidated, RGB only, strokes only (Phase 2.5)
 - `InfiniteCanvas.take_screenshot()` uses a Godot 3 API and is unused (Phase 4)
+- Startup error: `Menubar.gd:106` calls `get_viewport_rect()` before entering the tree (Phase 1)
+- Leftover debug `print()` of theme paths in `Main.gd` and `KeybindItem.gd` (Phase 1)

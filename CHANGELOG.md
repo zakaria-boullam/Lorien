@@ -18,4 +18,9 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - No source code changes yet.
 
 ### Tested
-- Not yet tested. Pending: baseline run on Windows (mouse + XP-Pen) by Zakaria.
+- 2026-11-12, Windows 11, Godot 4.3-stable (official build, SHA-512 verified), by Claude:
+  - Project imports with no errors (110 assets).
+  - App launches headless and windowed (GL Compatibility) and reaches the 144 FPS cap.
+  - One harmless upstream startup error: `get_viewport_rect` called before the node is in the tree (`UI/Menubar.gd:106`).
+  - Not tested: drawing, saving/reopening, mouse or pen input (requires manual interaction).
+- Pending: manual baseline test on Windows (mouse + XP-Pen) by Zakaria.
